@@ -1,3 +1,6 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  user_homepage_text_settings: "Configuration"
+  user_homepage_settings_help: "Users who are in the following Roles will have their homepage set to the Project Overview of their first project"
+  user_homepage_missing_roles: "Missing Roles.  Please create at least one first."
+

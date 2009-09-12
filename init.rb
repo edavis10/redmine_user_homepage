@@ -9,4 +9,10 @@ Redmine::Plugin.register :redmine_user_homepage do
   version '0.1.0'
 
   requires_redmine :version_or_higher => '0.8.0'
+
+  settings({
+             :partial => 'settings/user_homepage',
+             :default => {
+               'roles' => []
+             }})
 end

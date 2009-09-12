@@ -1,0 +1,24 @@
+<fieldset>
+  <%= content_tag(:legend, l(:user_homepage_text_settings)) %>
+  <%= content_tag(:p, l(:user_homepage_settings_help)) %>
+
+  <p>
+    <%= content_tag(:label, l(:label_role_plural)) %>
+
+    <%-
+      roles = Role.all(:order => "position ASC")
+      selected = @settings['roles'].collect(&:to_i) unless @settings['roles'].blank?
+      selected ||= []
+    -%>
+
+    <% unless roles.empty? %>
+    <%=
+      select_tag("settings[roles]",
+                 content_tag(:option, '') + options_from_collection_for_select(roles, :id, :name, selected ),
+                 :multiple => true,
+                 :size => 5)
+    %>
+    <% else %>
+      <%= link_to(l(:user_homepage_missing_roles), :controller => 'roles', :action => 'index') %>
+   <% end %>
+</fieldset>
