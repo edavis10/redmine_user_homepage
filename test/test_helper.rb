@@ -28,7 +28,20 @@ class Test::Unit::TestCase
   end
 
   def setup_plugin_configuration
+    @configured_role_one = Role.generate!
+    assert @configured_role_one.valid?
+    @configured_role_two = Role.generate!
+    @nonconfigured_role_one = Role.generate!    
+    
     configure_plugin({
+                       'roles' => [@configured_role_one.id, @configured_role_two.id]
                      })
+  end
+end
+
+# Shoulda
+class Test::Unit::TestCase
+  def self.should_use_the_default_homepage
+    should_redirect_to("the default homepage") { { :controller => 'welcome', :action => 'index' } }
   end
 end
