@@ -1,5 +1,11 @@
 require 'redmine'
 
+# Rails 2.3.4 support for overloading the routes
+if config.respond_to? :add_prepended_route_configuration_file
+  user_homepage_routes = File.join(File.dirname(__FILE__), *%w[config routes.rb])
+  config.add_prepended_route_configuration_file user_homepage_routes
+end
+
 if Rails.env == "test"
   
   # Bootstrap ObjectDaddy since it's needs to load before the Models
