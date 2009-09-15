@@ -4,23 +4,22 @@ User Homepage is a plugin to set the Redmine homepage to be the Project Overview
 
 == Features
 
-* __FEATURE__
+* Sets the Homepage for certain Roles to be their Project Overview
 
 == Getting the plugin
 
-A copy of the plugin can be downloaded from {Little Stream Software}[https://projects.littlestreamsoftware.com/projects/___XXX___/files] or from {GitHub}[http://github.com/edavis10/___XXX___]
+A copy of the plugin can be downloaded from {Little Stream Software}[https://projects.littlestreamsoftware.com/projects/redmine-misc/files] or from {GitHub}[http://github.com/edavis10/redmine_user_homepage]
 
 
 == Installation and Setup
 
 1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins 
-2. Run the plugin migrations +rake db:migrate_plugins+
-3. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
-4. __XXX__
+2. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
+4. Login as an Administrator and configure which Roles should use the Project Overview as their homepage. Configuration found in: Administration > Plugins > Configure
 
 == Usage
 
-__XXX__
+Just configure it above and browse to the Homepage as a user with that role.
 
 == License
 
